@@ -4,7 +4,7 @@ package se.umu.cs.labyrinth.labyrinth.model.player;
  * Created by timmy on 07/08/17.
  */
 public class PlayerData {
-    private static  int levelStatus = 0;
+    private static  int levelStatus = 1;
     private int time = 0;
     private int retries = 0;
 

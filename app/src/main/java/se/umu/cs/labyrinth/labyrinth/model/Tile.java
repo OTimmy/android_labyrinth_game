@@ -8,23 +8,27 @@ import se.umu.cs.labyrinth.labyrinth.model.player.Position;
 
 public class Tile {
 
-    private Position position;
     private int type;
 
-    public Tile(int x, int y, int type) {
-        position = new Position(x,y);
+    public Tile( int type) {
+//        position = new Position(x,y);
         this.type = type;
     }
 
-    public Position getPosition() {
-        return position;
-    }
-
-    public void setPosition(Position position) {
-        this.position = position;
-    }
+//    public Position getPosition() {
+//        return position;
+//    }
+//
+//    public void setPosition(Position position) {
+//        this.position = position;
+//    }
 
     private int getType() {
         return type;
+    }
+
+    @Override
+    public String toString() {
+        return Integer.toString(type);
     }
 }

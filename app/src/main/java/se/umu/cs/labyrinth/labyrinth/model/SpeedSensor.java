@@ -1,12 +1,12 @@
 package se.umu.cs.labyrinth.labyrinth.model;
 
 import android.hardware.SensorManager;
-import android.app.Activity;
 import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 
+import se.umu.cs.labyrinth.labyrinth.controller.Game;
 import se.umu.cs.labyrinth.labyrinth.controller.Observer;
 import se.umu.cs.labyrinth.labyrinth.controller.Subject;
 
@@ -23,14 +23,14 @@ public class SpeedSensor implements SensorEventListener, Subject{
     private float mGeomagnetic[];
     private Observer observer;
 
-
     private int xSpeed = 0;
     private int ySpeed = 0;
 
-    public SpeedSensor(Activity activity) {
+    public SpeedSensor() {
+
         //Start service
         mSensorManager = (SensorManager)
-                activity.getSystemService(Context.SENSOR_SERVICE);
+                Game.getActivity().getSystemService(Context.SENSOR_SERVICE);
         accelSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         magnetSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
     }
